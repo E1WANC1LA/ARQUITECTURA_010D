@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - BiblioXapp</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/funciones.js' %}"></script>
+</head>
+<body>
+    <div class="header d-flex flex-column align-items-center justify-content-center">
+        <h1>BiblioXapp</h1>
+        <button class="btn btn-primary col-md-1" onclick="CerrarSesion();">Cerrar Sesión</button>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-4">
+                <a href="/inicio" class="btn btn-primary">Inicio</a>
+            </div>
+            <div class="col-md-4">
+                <a href="/perfil" class="btn btn-primary">Perfil</a>
+            </div>
+            <div class="col-md-4">
+                <a href="/reservas" class="btn btn-primary">Reservas</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container my-5">
+        <div class="text-center">
+            <h2 class="text-secondary">Bienvenido a BiblioX</h2>
+            <p>Explora nuestro catálogo de libros y reserva tu espacio de estudio en nuestra biblioteca privada.</p>
+        </div>
+
+        <!-- Galería de Imágenes -->
+        <div class="row mt-4">
+            <!-- Imagen 1 -->
+            <div class="col-md-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/library1.jpeg' %}" class="card-img-top rounded" alt="Biblioteca con estantes llenos de libros">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Amplia Colección de Libros</h5>
+                        <p class="card-text">Descubre una gran variedad de géneros y temas disponibles para ti.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagen 2 -->
+            <div class="col-md-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/study_area.jpeg' %}" class="card-img-top rounded" alt="Área de estudio en biblioteca">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Espacios de Estudio</h5>
+                        <p class="card-text">Reserva un espacio de estudio para concentrarte y estudiar cómodamente.</p>
+                        <a href="/reservas" class="btn btn-primary">Reservar Espacio</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagen 3 -->
+            <div class="col-md-4">
+                <div class="card border-0">
+                    <img src="{% static 'img/reading_room.jpeg' %}" class="card-img-top rounded" alt="Sala de lectura">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sala de Lectura</h5>
+                        <p class="card-text">Un espacio tranquilo para leer y estudiar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-center py-3 fixed-bottom">
+        <p class="mb-0">&copy; 2024 BiblioX - Todos los derechos reservados</p>
+        <p>Facilitando el aprendizaje y la concentración en nuestros espacios de estudio.</p>
+    </footer>
+   
+</body>
+</html>

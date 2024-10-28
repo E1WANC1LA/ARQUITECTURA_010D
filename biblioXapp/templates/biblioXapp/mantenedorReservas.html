@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Reservas - BiblioXapp</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/funciones.js' %}"></script>
+</head>
+<body>
+    <div class="header d-flex flex-column align-items-center justify-content-center">
+        <h1>BiblioXapp</h1>
+        <button class="btn btn-primary col-md-1" onclick="CerrarSesion();">Cerrar Sesión</button>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-3">
+                <a href="/mantenedorUsuarios" class="btn btn-primary">Mantenedor de Usuarios</a>
+            </div>
+            <div class="col-md-3">
+                <a href="/mantenedorTiposUsuario" class="btn btn-primary">Mantenedor de Tipos de usuario</a>
+            </div>
+            <div class="col-md-3">
+                <a href="/mantenedorSalas" class="btn btn-primary">Mantenedor de Salas de Estudio</a>
+            </div>
+            <div class="col-md-3">
+                <a href="/mantenedorReservas" class="btn btn-primary">Gestion de Reservas</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="text-center">
+            <h2>Bienvenido a BiblioX</h2>
+        </div>
+    </div>
+
+    <footer class="footer text-center py-3 fixed-bottom">
+        <p class="mb-0">&copy; 2024 BiblioX - Todos los derechos reservados</p>
+        <p>Facilitando el aprendizaje y la concentración en nuestros espacios de estudio.</p>
+    </footer>
+   
+</body>
+</html>
