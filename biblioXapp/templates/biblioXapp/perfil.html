@@ -15,6 +15,27 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="{% static 'js/funciones.js' %}"></script>
 
+    <style>
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd; /* Opcional: agrega bordes a las celdas */
+}
+
+table td img {
+  max-width: 50px; /* Limita el ancho de la imagen */
+  max-height: 50px; /* Limita la altura de la imagen */
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+  border-radius: 5px; /* Opcional: esquinas redondeadas */
+}
+
+    </style>
 
     <script>
         $(document).ready(function(){
@@ -55,6 +76,30 @@
             </div>
             <button type="button" class="btn btn-primary btn-block mt-3">Editar Perfil</button>
         </div>
+        <div class="card p-4"> 
+            <table>
+                <thead>
+
+                <tr>
+                    <th></th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Sala</th>
+                </tr>
+                </thead>
+            <tbody>
+                <tr>
+                    <td><img src="{% static 'img/sala1.webp' %}" class="card-img-top" alt="Sala de estudio 1"></td>
+                    <td>2024-11-18</td>
+                    <td>10:00</td>
+                    <td>Sala de Estudio 1</td>
+                </tr>
+
+            </tbody>
+
+
+            </table>
+
     </div>
 
     <footer class="footer text-center py-3 fixed-bottom">

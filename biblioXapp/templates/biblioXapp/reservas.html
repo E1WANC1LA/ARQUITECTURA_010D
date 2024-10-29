@@ -11,6 +11,27 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 
+    <style>
+.card-container {
+  display: flex;
+  gap: 1rem; /* Espacio entre las tarjetas */
+}
+
+.card {
+  width: 200px; /* Ancho fijo o ajustable según diseño */
+}
+
+.card img.card-img-top {
+  max-width: 100%;
+  max-height: 150px; /* Altura máxima para la imagen */
+  object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+  border-radius: 5px; /* Opcional: esquinas redondeadas */
+}
+
+
+
+    </style>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="{% static 'js/funciones.js' %}"></script>
@@ -36,7 +57,86 @@
     <div class="container">
         <h2>Reservas</h2>
         <p>Consulta y gestiona tus reservas aquí.</p>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-body">
+                    <img src="{% static 'img/sala1.webp' %}" class="card-img-top" alt="Sala de estudio 1">
+                    <h5 class="card-title
+                    ">Sala de estudio 1</h5>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalReserva">Reservar</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="{% static 'img/sala2.webp' %}" class="card-img-top" alt="Sala de estudio 2">
+                    <h5 class="card-title
+                    ">Sala de estudio 2</h5>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalReserva">Reservar</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="{% static 'img/sala3.webp' %}" class="card-img-top" alt="Sala de estudio 3">
+                    <h5 class="card-title
+                    ">Sala de estudio 3</h5>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalReserva">Reservar</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="{% static 'img/sala4.webp' %}" class="card-img-top" alt="Sala de estudio 4">
+                    <h5 class="card-title
+                    ">Sala de estudio 4</h5>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalReserva">Reservar</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="{% static 'img/sala5.webp' %}" class="card-img-top" alt="Sala de estudio 5">
+                    <h5 class="card-title
+                    ">Sala de estudio 5</h5>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalReserva">Reservar</button>
+                </div>
+            </div>
+
+
+                    
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog" aria-labelledby="modalReservaLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalReservaLabel">Reservar sala de estudio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="form-group
+                        ">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" class="form-control" id="fecha">
+                        </div>
+                        <div class="form-group
+                        ">
+                            <label for="horaInicio">Hora Inicio</label>
+                            <input type="time" class="form-control" id="horaInicio">
+                        </div>
+                        <div class="form-group
+                        ">
+                           <label for="horaFin">Hora Fin</label>
+                            <input type="time" class="form-control" id="horaFin">
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="ReservarSala();">Reservar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <footer class="footer text-center py-3 fixed-bottom">
         <p class="mb-0">&copy; 2024 BiblioX - Todos los derechos reservados</p>

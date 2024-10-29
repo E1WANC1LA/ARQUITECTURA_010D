@@ -718,3 +718,13 @@ function buscarDatosUsuario(){
         failure: function (response) { alert(response); }
     });
 }
+
+
+function ReservarSala(){
+$("#fecha").val('');
+$("#horaInicio").val('');
+$("#horaFin").val('');
+
+alert("Reserva realizada con éxito");
+$('#modalReserva').modal('hide'); 
+}
