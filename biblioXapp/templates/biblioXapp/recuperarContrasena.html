@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - BiblioXapp</title>
+    <title>Recuperar Contraseña - BiblioXapp</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
@@ -22,19 +22,14 @@
 
     <div class="container">
         <div class="card p-4">
-            <h2 class="text-center">Iniciar Sesión</h2>
+            <h2 class="text-center">Recuperar Contraseña</h2>
             <div>
                 <div class="form-group">
                     <label for="correo">Correo:</label>
-                    <input type="text" tabindex="1" class="form-control" id="correo" placeholder="Ingrese su usuario">
+                    <input type="email" tabindex="1" class="form-control" id="correo" placeholder="Ingrese su correo electrónico">
                 </div>
-                <div class="form-group">
-                    <label for="contrasena">Contraseña:</label>
-                    <input type="password" tabindex="2" class="form-control" id="contrasena" placeholder="Ingrese su contraseña">
-                </div>
-                <button class="btn btn-primary btn-block" tabindex="3" onclick="IniciarSesion();">Ingresar</button>
-                <button class="btn btn-link btn-block"><a tabindex="4" href="/registro">Registrarse</a></button>
-                <button class="btn btn-link btn-block"><a tabindex="5" href="/recuperar">Recuperar Contraseña</a></button>
+                <button onclick="RecuperarContrasena();" tabindex="2" class="btn btn-primary btn-block">Recuperar Contraseña</button>
+                <button class="btn btn-link btn-block"><a tabindex="3" href="/login">Iniciar Sesion</a></button>
             </div>
         </div>
     </div>

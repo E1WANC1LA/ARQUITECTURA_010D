@@ -52,6 +52,9 @@ def mantenedorReservas(request):
 def mantenedorSalas(request):
     return render(request, 'biblioXapp/mantenedorSalas.html')
 
+@csrf_exempt
+def recuperar(request):
+    return render(request, 'biblioXapp/recuperarContrasena.html')
 
 @csrf_exempt
 def crearUsuario(request):
@@ -430,6 +433,29 @@ def ObtenerDatosUsuario(request):
             
 
             return JsonResponse({'estado': 'completado', 'datos': usuario_dict})
+        except Exception as e:
+            return JsonResponse({
+                'Excepciones': {
+                    'message': str(e),  # Mensaje de la excepción
+                    'type': type(e).__name__,  # Tipo de la excepción
+                    'details': traceback.format_exc()  # Detalles de la excepción
+                      }
+            })
+    else:
+        return JsonResponse({'estado': 'fallido'})
+    
+@csrf_exempt
+def RecuperarContrasena(request):
+    if request.method == 'POST':
+        try:
+            correo = request.POST.get('correo')
+            usuario = Usuario.objects.filter(correo=correo).first()
+            if usuario is not None:
+                usuario.contrasena = str(1234)
+                usuario.save()
+                return JsonResponse({'estado': 'completado', 'contrasena': '1234'})
+            else:
+                return JsonResponse({'estado': 'fallido'})
         except Exception as e:
             return JsonResponse({
                 'Excepciones': {

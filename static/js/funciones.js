@@ -728,3 +728,46 @@ $("#horaFin").val('');
 alert("Reserva realizada con éxito");
 $('#modalReserva').modal('hide'); 
 }
+
+function RecuperarContrasena(){
+    var correo = $('#correo').val();
+    var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+    if (!regex.test(correo)) {
+        alert('Por favor, introduzca un correo electronico valido.');
+        return;
+    }
+
+    var fd = new FormData();
+    fd.append("correo", correo);
+    $.ajax({
+        type: "POST",
+        url: "/RecuperarContrasena/",
+        data: fd,
+        contentType: false,
+        processData: false,
+        headers: { "X-CSRFToken": getCookie("csrftoken") },
+        success: function (response) {
+            console.log(response);
+            if (response.Excepciones != null) {
+                alert('Ha ocurrido un error inesperado');
+                console.log(response.Excepciones.message + '\n' + response.Excepciones.type + '\n' + response.Excepciones.details);
+                return;
+            }
+            if (response.error != null) {
+                alert(response.error);
+                return;
+            }
+            if(response.estado === 'completado') {
+                alert('Su nueva contraseña es: ' + response.contrasena);
+                window.location.href = '/login/';
+            } else {
+                alert('Falló la recuperación de la contraseña');
+            }
+
+        },
+        error: function (XMLHttpRequest, text, error) { ; alert(XMLHttpRequest.responseText); },
+        failure: function (response) { alert(response); }
+    });
+
+}
